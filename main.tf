@@ -170,12 +170,3 @@ resource "null_resource" "bootstrap" {
     ]
   }
 }
-
-resource "vultr_dns_record" "api" {
-  count  = "${var.total_instances}"
-  domain = "${var.domain}"
-  name   = "${var.name}"
-  type   = "A"
-  data   = "${element(vultr_instance.manager.*.ipv4_address, count.index)}"
-  ttl    = 300
-}
