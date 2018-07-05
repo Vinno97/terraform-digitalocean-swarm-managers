@@ -1,10 +1,16 @@
+variable "vultr_key" {
+  type        = "string"
+  description = "The Vultr API Key"
+}
+
 variable "domain" {
-  description = "Domain name used in droplet hostnames, e.g example.com"
+  type        = "string"
+  description = "Domain name used in hostnames, e.g example.com"
 }
 
 variable "ssh_keys" {
   type        = "list"
-  description = "A list of SSH IDs or fingerprints to enable in the format [12345, 123456] that are added to manager nodes"
+  description = "A list of SSH IDs that are added to manager nodes"
 }
 
 variable "provision_ssh_key" {
@@ -19,7 +25,7 @@ variable "provision_user" {
 
 variable "region" {
   description = "Datacenter region in which the cluster will be created"
-  default     = "ams3"
+  default     = "Amsterdam"
 }
 
 variable "total_instances" {
@@ -27,14 +33,14 @@ variable "total_instances" {
   default     = 1
 }
 
-variable "image" {
-  description = "Droplet image used for the manager nodes"
-  default     = "coreos-alpha"
+variable "os" {
+  description = "OS image used for the manager nodes"
+  default     = "coreos"
 }
 
-variable "size" {
-  description = "Droplet size of manager nodes"
-  default     = "s-1vcpu-1gb"
+variable "plan" {
+  description = "Plan to use for manager nodes"
+  default     = "1024 MB RAM,25 GB SSD"
 }
 
 variable "name" {
@@ -42,10 +48,10 @@ variable "name" {
   default     = "manager"
 }
 
-variable "backups" {
-  description = "Enable DigitalOcean droplet backups"
-  default     = false
-}
+# variable "backups" {
+#   description = "Enable DigitalOcean droplet backups"
+#   default     = false
+# }
 
 variable "user_data" {
   description = "User data content for manager nodes"
@@ -57,10 +63,10 @@ variable "docker_cmd" {
   default     = "sudo docker"
 }
 
-variable "tags" {
-  description = "List of DigitalOcean tag ids"
-  default     = []
-  type        = "list"
+variable "tag" {
+  description = "Vultr tag for the manager nodes"
+  default     = "manager"
+  type        = "string"
 }
 
 variable "availability" {
