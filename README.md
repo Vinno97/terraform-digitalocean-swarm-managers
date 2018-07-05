@@ -1,6 +1,6 @@
 # Terraform - Vultr Docker Swarm mode managers
 
-Terraform module to provision and bootstrap a Docker Swarm mode cluster with multiple managers on DigitalOcean.
+Terraform module to provision and bootstrap a Docker Swarm mode cluster with multiple managers on Vultr.
 
 > This module is a port of [terraform-digitalocean-swarm-managers]() by thojkooi. Most functionalities are ported from DigitalOcean to Vultr, though there might be cases that do not yet work. If you find any cases that are not yet supported, please do not hesitate to submit an issue.
 
