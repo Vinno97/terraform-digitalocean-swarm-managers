@@ -19,7 +19,7 @@ variable "provision_ssh_key" {
 }
 
 variable "provision_user" {
-  default     = "core"
+  default     = "root"
   description = "User used to log in to the droplets via ssh for issueing Docker commands"
 }
 
@@ -47,11 +47,6 @@ variable "name" {
   description = "Prefix for name of manager nodes"
   default     = "manager"
 }
-
-# variable "backups" {
-#   description = "Enable DigitalOcean droplet backups"
-#   default     = false
-# }
 
 variable "user_data" {
   description = "User data content for manager nodes"
